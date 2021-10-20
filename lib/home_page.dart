@@ -213,49 +213,52 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             Expanded(
-                child: ListView.builder(
-                    itemCount: 4 ~/ 2,
-                    itemBuilder: (_, i) {
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.only(bottom: 5),
-                            margin: const EdgeInsets.only(bottom: 20),
-                            width: 150,
-                            height: 170,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(width: 1)),
-                            child: const Center(
-                                child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Text(
-                                'something',
-                              ),
-                            )),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.only(bottom: 5),
-                            margin: const EdgeInsets.only(bottom: 20),
-                            width: 150,
-                            height: 170,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(width: 1)),
-                            child: const Center(
-                                child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Text(
-                                'something',
-                              ),
-                            )),
-                          )
-                        ],
-                      );
-                    }))
+                child: OverflowBox(
+                  maxWidth: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
+                      itemCount: 4 ~/ 2,
+                      itemBuilder: (_, i) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(bottom: 5),
+                              margin: const EdgeInsets.only(bottom: 20),
+                              width: 200,
+                              height: 170,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(width: 1)),
+                              child: const Center(
+                                  child: Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Text(
+                                  'something',
+                                ),
+                              )),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(bottom: 5),
+                              margin: const EdgeInsets.only(bottom: 20),
+                              width: 200,
+                              height: 170,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(width: 1)),
+                              child: const Center(
+                                  child: Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Text(
+                                  'something',
+                                ),
+                              )),
+                            )
+                          ],
+                        );
+                      }),
+                ))
           ],
         ),
       ),
