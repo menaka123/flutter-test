@@ -83,8 +83,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   boxShadow: [
                     BoxShadow(
-                        offset: Offset(10, 10),
-                        blurRadius: 20,
+                        offset: Offset(5, 5),
+                        blurRadius: 15,
                         color: Colors.deepPurpleAccent)
                   ]),
               child: Container(
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(60),
                               boxShadow: const [
                                 BoxShadow(
-                                    offset: Offset(2, 4),
+                                    offset: Offset(2, 2),
                                     blurRadius: 20,
                                     color: Colors.black)
                               ]),
@@ -148,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: 180,
               width: MediaQuery.of(context).size.width,
               child: Stack(
@@ -164,14 +164,98 @@ class _HomePageState extends State<HomePage> {
                         BoxShadow(
                             offset: Offset(2, 2),
                             blurRadius: 20,
-                            color: Colors.deepPurpleAccent
+                            color: Colors.deepPurpleAccent)
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: double.maxFinite,
+                    height: 100,
+                    margin: const EdgeInsets.only(left: 150, top: 50),
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          "You are doing great",
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepPurpleAccent),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        RichText(
+                          text: const TextSpan(
+                              text: 'Keep it up',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey)),
+                        ),
+                        RichText(
+                          text: const TextSpan(
+                              text: 'stick to your Plan',
+                              style:
+                                  TextStyle(fontSize: 16, color: Colors.grey)),
                         )
                       ],
                     ),
                   )
                 ],
               ),
-            )
+            ),
+            Row(
+              children: const [
+                Text(
+                  'Area of foucus',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
+                )
+              ],
+            ),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: 4 ~/ 2,
+                    itemBuilder: (_, i) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.only(bottom: 5),
+                            margin: const EdgeInsets.only(bottom: 20),
+                            width: 150,
+                            height: 170,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(width: 1)),
+                            child: const Center(
+                                child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                'something',
+                              ),
+                            )),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(bottom: 5),
+                            margin: const EdgeInsets.only(bottom: 20),
+                            width: 150,
+                            height: 170,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                                border: Border.all(width: 1)),
+                            child: const Center(
+                                child: Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                'something',
+                              ),
+                            )),
+                          )
+                        ],
+                      );
+                    }))
           ],
         ),
       ),
